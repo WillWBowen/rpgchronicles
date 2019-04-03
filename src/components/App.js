@@ -27,6 +27,7 @@ const client = new ApolloClient({
 class App extends Component {
 
   async componentDidMount() {
+    console.log(process.env.REACT_APP_DOMAIN || "domain not defined")
     if(this.props.location.pathname === '/callback') return
     try {
       await auth.silentAuth()
