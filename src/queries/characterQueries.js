@@ -22,4 +22,15 @@ const getCharactersQuery = gql`
   }
 `
 
-export { addCharacterMutation, getCharactersQuery }
+const getCharacterQuery = gql`
+  query ($character: ID!) {
+    character(character: $character) {
+      id
+      name
+      race
+      class
+    }
+  }
+`
+
+export { addCharacterMutation, getCharactersQuery, getCharacterQuery }

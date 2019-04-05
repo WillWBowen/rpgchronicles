@@ -1,5 +1,6 @@
 import React from 'react'
 import { Query } from 'react-apollo'
+import { Link } from 'react-router-dom'
 import AddCharacter from './AddCharacter'
 import { getCharactersQuery } from '../queries'
 
@@ -12,12 +13,14 @@ const Characters = ({ user }) => {
           if(error) return `Error! ${error.message}`
           return (<div>
             {data.characters.map(character => (
-              <div className="card" key={character.id}>
-                <div className="card-content">
-                  <span className="card-title">{character.name}</span>
-                  <p>{character.race} {character.class}</p>
+              <Link to={`/character/${character.id}`} key={character.id}>
+                <div className="card">
+                  <div className="card-content">
+                    <span className="card-title">{character.name}</span>
+                    <p>{character.race} {character.class}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>)
         }}

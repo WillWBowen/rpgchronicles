@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom'
 import '../styles/App.css';
 import NavBar from './NavBar'
 import Characters from './Characters'
+import Character from './Character'
 import Campaigns from './Campaigns'
 import Campaign from './Campaign'
 import SessionForm from './SessionForm'
@@ -43,6 +44,7 @@ class App extends Component {
           <NavBar />
           <Route exact path='/' component={ Main } />
           <Route exact path='/characters' component={() => <Characters user={auth.getEmail()} /> } />
+          <Route exact path='/character/:character' component={ Character } />
           <Route exact path='/campaigns' component={() => <Campaigns user={auth.getEmail()} />} />
           <Route exact path='/campaign/:campaign' component={ Campaign } />
           <Route exact path='/session' component={ SessionForm } />

@@ -1,5 +1,5 @@
 import { getCampaignQuery, getCampaignsQuery, addCampaignMutation } from './campaignQueries'
-import { getCharactersQuery, addCharacterMutation } from './characterQueries'
+import { getCharactersQuery, addCharacterMutation, getCharacterQuery } from './characterQueries'
 import { getSessionsQuery, addSessionMutation, updateSessionMutation } from './sessionQueries'
 
 export {
@@ -7,6 +7,7 @@ export {
   getCampaignsQuery,
   addCampaignMutation,
   getCharactersQuery,
+  getCharacterQuery,
   addCharacterMutation,
   getSessionsQuery,
   addSessionMutation,
