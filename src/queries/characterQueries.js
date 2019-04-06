@@ -11,6 +11,14 @@ const addCharacterMutation = gql`
   }
 `
 
+const deleteCharacterMutation = gql`
+  mutation ($character: ID!) {
+    deleteCharacter(character: $character) {
+      id
+    }
+  }
+`
+
 const getCharactersQuery = gql`
   query Character($user: String!){
     characters(user: $user){
@@ -33,4 +41,4 @@ const getCharacterQuery = gql`
   }
 `
 
-export { addCharacterMutation, getCharactersQuery, getCharacterQuery }
+export { addCharacterMutation, deleteCharacterMutation, getCharactersQuery, getCharacterQuery }
